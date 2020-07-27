@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+    <link rel="stylesheet" href="./stylesheets/admin.css">
+</head>
+
+<body>
+    <% include partials/navbar %>
+
+    <div class="content">
+            <ul class="list-group">
+                <a class="btn btn-outline-success my-2 my-sm-0" href="createAdmin">Create new Admin</a>
+            </ul>
+        <p>Admin List</p>
+        <ul class="list-group">
+                <% for(var i=0; i<dataQuery.length; i++) {%>
+                <form action="" method="post">
+                <li  class="list-group-item"> <input type="text" class="form-control" name="idtxt" id="idtxt" value="ID : <%= dataQuery[i].id %>" readonly /> 
+                <input type="text" name="id" id="id" value="<%= dataQuery[i].id %>" hidden/> 
+
+                <input class="form-control" type="text" name="logintxt" id="logintxt" value="Login : <%= dataQuery[i].login %>" readonly /> 
+                <input type="text" name="login" id="login" value="<%= dataQuery[i].login %>" hidden/>
+
+                <input type="image" id="submit" src="../images/deleteIcon.png" width="35px" height="35px" />
+            
+            </li>
+            </form>
+                <% } %>
+        </ul>
+    </div>
+
+
+    <% include partials/footer %>
+</body>
+
+</html>
+<% include partials/script %>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+       
+</head>
+
+<body>
+    <% include partials/navbar %>
+
+    <div id="mapid"></div>
+
+    <% include partials/footer %>
+</body>
+
+<% include partials/script %>
+
+</html>
+
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+    integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+    crossorigin=""></script>
+
+
+
+<script>
+
+
+
+
+
+    <%if (   dataQuery.length  >0    ) {%>
+console.log("ok");
+
+
+        var mymap = L.map('mapid', {
+            zoomControl: false
+        }).setView([<%= dataQuery[0].isLocatedAt[0].schema_geo[0].schema_latitude %>, <%= dataQuery[0].isLocatedAt[0].schema_geo[0].schema_longitude %>], 7);
+
+<%for (var i = 0; i < dataQuery.length; i++) {%>
+var marker = L.marker([<%= dataQuery[i].isLocatedAt[0].schema_geo[0].schema_latitude %>, <%= dataQuery[i].isLocatedAt[0].schema_geo[0].schema_longitude %>]).addTo(mymap);
+var popup = L.popup().setContent("<%= dataQuery[i].rdfs_label[0].value %>");
+                    marker.bindPopup(popup);
+
+<%}  }else{%>
+console.log("ok2");
+
+    var mymap = L.map('mapid', {
+            zoomControl: false
+        }).setView([<%= latitude  %>, <%= longitude %>], 7);
+    var marker = L.marker([<%= latitude %>, <%= longitude %>]).addTo(mymap);
+    var popup = L.popup().setContent("<%= name %>");
+    marker.bindPopup(popup);
+<%}%>
+    
+
+    L.tileLayer(
+        'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox.streets'
+    }).addTo(mymap);
+
+
+
+
+
+
+
+</script>

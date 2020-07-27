@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<% include partials/head %>
+
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/jquery.tinymce.min.js" referrerpolicy="origin"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href=".././stylesheets/pageEditscss.css">
+<script>
+        tinymce.init({
+          selector: '.toedit',
+          height: 600,
+          
+        });
+
+      
+    </script>
+
+</head>
+<body>
+        <% include partials/navbar %>
+
+        <div class="contentToChange">
+            <form action="/pageEdit" method="post">
+            <div class="form-group">
+              <label for="titlePage"></label>
+              <input type="text" name="isset" id="isset" value="<%= result[0].id %>" hidden>
+              <input style="  text-align: center;" type="text" class="form-control center" name="titlePageInput" id="titlePageInput" aria-describedby="Title" placeholder="Title of the page" value="<%= result[0].TitlePage %>">
+              <label for="libelePage"></label>
+              <input style=" text-align: center;" type="text" class="form-control" name="libelePageInput" id="libelePageInput" aria-describedby="Libelle" placeholder="Libele of the page" value="<%= result[0].LibellePage %>">              
+                <label for=""  style="text-align: center; width: 100%; margin-top: 1%;">filter of the page</label>
+                <select class="form-control form-control-sm " name="filterselect" id="filterselect">
+                <% for  (var i = 0 ; i < filters.length ; i++ ){ %>
+                 <option value="<%= filters[i].filterid %>"><%= filters[i].libellé %></option>
+                <% } %>
+                </select>      
+                <label for=""  style="text-align: center; width: 100%; margin-top: 1%;">Type of page</label>
+                <select class="form-control form-control-sm " name="typeselect" id="typeselect">
+                <% for  (var i = 0 ; i < types.length ; i++ ){ %>
+                  <option value='<%= types[i].typeid %>'><%= types[i].libellé %></option>
+                <% } %>
+                </select>            
+            </div>
+            <textarea  class="toedit" name="toedit">
+                <%= result[0].ContentHtml %>
+            </textarea>
+            <button type="submit" class="btn btn-primary btn-block">Create page</button>
+        </form>
+        </div>
+
+
+        <% include partials/footer %>
+</body>
+
+     
+</html>

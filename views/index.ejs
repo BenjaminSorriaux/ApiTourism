@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include partials/head %>
+</head>
+
+<body>
+  <% include partials/navbar %>
+
+  <div class="content">
+      <h1 class="lead">Welcome to </h1>
+      <h1 id="site">ApiTourism</h1>
+      <p class="lead">
+          This website get data from <a href="https://info.datatourisme.gouv.fr/"><b>datatourisme</b></a> and show
+          it.<br />
+          If you want to see a specific category of data, for example restaurants, you will find a category wich
+          correspond in the navigation bar.<br />
+          If you prefer a specific search, there is a search bar in the navigation bar.
+      </p>
+  </div>
+  
+  <div class="container-fluid" id="mainpagecontainer">
+      <div class="row">
+          <div class="col text-center align-middle" id="leftcol"><a href="https://info.datatourisme.gouv.fr/"><img
+                      src="../images/datatourisme_logo.png" width="100%"></a></div>
+          <div class="col text-center center-block text-center" id="rightcol">
+              <p>Tourism data provided by the french government.</p>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col text-center center-block text-center" id="leftcol">
+              <p>Node.js is a runtime that we use to develop our website.</p>
+          </div>
+          <div class="col text-center align-middle" id="rightcol"><a href="https://nodejs.org/en/"><img
+                      src="../images/nodejs_logo.png" width="100%"></a></div>
+      </div>
+  </div>
+
+  <% include partials/footer %>
+</body>
+<% include partials/script %>
+
+</html>

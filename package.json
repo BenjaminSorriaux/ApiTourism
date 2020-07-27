@@ -1,0 +1,31 @@
+{
+  "name": "mywebsite",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "alert-node": "^2.0.3",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.0",
+    "fetch": "^1.1.0",
+    "gulp": "^4.0.2",
+    "http-errors": "~1.6.3",
+    "jquery": "^3.4.1",
+    "morgan": "~1.9.1",
+    "mysql": "^2.17.1",
+    "node-fetch": "^2.6.0",
+    "password-hash": "^1.2.2",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp-sass": "^4.0.2"
+  }
+}

@@ -1,0 +1,21 @@
+.content button{
+    border: none;
+    color: #FFFFFF;
+    background-color: #7289DA;
+}
+
+.content button:hover{
+    color: #F0C27D!important;
+}
+
+.list-group{
+    color: black;
+    margin-bottom: 1em;
+}
+.form-admin{
+    padding-left: 0px;
+}
+.alert-login{
+    width: 100%;
+    text-align: center;
+}

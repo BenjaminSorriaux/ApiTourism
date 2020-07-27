@@ -1,0 +1,82 @@
+body, html {
+    height: 100%;
+  }
+  
+  .parallax {
+    /* The image used */
+    background-image: url("http://www.unmonde.fr/wp-content/uploads/2014/05/Fotolia_43783967_Subscription_S.jpg");
+  
+    /* Full height */
+    height: 21%;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media only screen and (max-device-width: 1366px) {
+    .parallax {
+      background-attachment: scroll;
+    }
+  }
+
+
+  .parallaxbis {
+    /* The image used */
+    background-image: url("https://www.magiclub.com/magiclub/visuals/carroussel-Iles.jpg");
+  
+    /* Full height */
+    height: 15%;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media only screen and (max-device-width: 1366px) {
+    .parallax {
+      background-attachment: scroll;
+    }
+  }
+
+  #navbar{
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1;
+      
+  }
+ .spacer{
+    margin-top: 5%;
+ }
+
+ .caption{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+ }
+
+ .caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
+}
+#contentdisplay{
+    height:550px;
+    background-color:rgb(255, 255, 255);
+    font-size:36px;
+    border-radius: 4px;
+    
+}
+
+ 

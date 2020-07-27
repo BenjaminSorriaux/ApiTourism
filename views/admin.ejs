@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include partials/head %>
+    <link rel="stylesheet" href="./stylesheets/admin.css">
+</head>
+
+<body>
+    <% include partials/navbar %>
+
+    <div class="content">
+            <p>Users</p>
+            <ul class="list-group">
+                <a class="btn btn-outline-success my-2 my-sm-0" href="manageAdmin">Manage Users</a>
+            </ul>
+        <p>Page List</p>
+        <ul class="list-group">
+        <% for (var i = 0 ; i < result.length ; i++ ){ %>
+            <li class="list-group-item"> <a href="/PageEdit/<%= result[i].id %>" class="list-group-item list-group-item-action"><%= result[i].TitlePage %></a></li>
+        <% } %>
+        </ul>
+        <form method="get" action="/pageEdit">
+            <button type="submit">Go to page editor</button>
+        </form>
+    </div>
+
+
+    <% include partials/footer %>
+</body>
+
+</html>
+<% include partials/script %>

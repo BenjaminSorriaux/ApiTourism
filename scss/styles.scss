@@ -1,0 +1,151 @@
+/*#region theme#*/
+$themes: (
+    light: (
+        $backgroundColor: #FFFFFF,
+    ),
+    dark: (
+        $backgroundColor: #333,
+    ),
+);
+
+// $backgroundColor: #333;
+$textColor: #FFFFFF;
+$navbarBackground: rgb(86, 103, 165);
+$contentColor: #7289DA;
+
+/*#endregion theme#*/
+
+#listing {
+    align-content: center;
+    text-align: center;
+    width: 75%;
+    margin-top: 5%;
+    margin-left: 12.5%;
+    background-color: $contentColor;
+    border-radius: 10px;
+    padding: 1em;
+}
+
+#number-result {
+    position: absolute;
+    align-content: center;
+    text-align: center;
+    font-size: xx-large;
+}
+
+#list {
+    border-style: solid;
+}
+
+/*#region navbar#*/
+.navbar-light {
+    background-color: $navbarBackground;
+    border-bottom: 1px solid $backgroundColor;
+}
+
+.btn-outline-success {
+    color: #F0C27D !important;
+    border-color: #F0C27D !important;
+}
+
+.btn-outline-success:hover {
+    color: $textColor !important;
+    background-color: #F0C27D !important;
+    border-color: #F0C27D !important;
+}
+
+nav ul {
+    margin-left: 1%;
+}
+
+.nav-link {
+    color: $textColor !important;
+}
+
+.nav-link:hover {
+    color: #F0C27D !important;
+}
+
+/*#endregion navbar#*/
+
+html,
+body {
+    background-color: $backgroundColor !important;
+    color: $textColor !important;
+}
+
+.content {
+    align-content: center;
+    text-align: center;
+    width: 33%;
+    margin-top: 5%;
+    margin-left: 33%;
+    background-color: $contentColor;
+    border-radius: 10px;
+    padding: 1em;
+}
+
+.content h1 {
+    font-size: 70px;
+}
+
+body a {
+    color: $textColor;
+}
+
+body a:hover {
+    color: #F0C27D;
+    text-decoration: none;
+}
+
+footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background-color: $navbarBackground;
+    border-top: 1px solid $backgroundColor;
+    line-height: 2em;
+    padding: 5px;
+    text-align: center;
+    z-index: 0;
+}
+
+#mainpagecontainer {
+    width: 80%;
+    margin: 10%;
+    background-color: $contentColor;
+    border-radius: 10px;
+    margin-top: 2%;
+}
+
+#leftcol {
+    padding: 50px;
+}
+
+#leftcol img {
+    width: 75%;
+}
+
+#rightcol img {
+    width: 70%;
+}
+
+.text-center {
+    margin: auto !important;
+    font-size: 1.5em;
+}
+
+#mapid {
+    height: 900px;
+    z-index: 2;
+}
+
+#mapbody {
+    overflow: hidden;
+}
+
+#infos {
+    margin-top: 1em;
+    font-size: 20px;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include partials/head %>
+    <link rel="stylesheet" href="./stylesheets/admin.css">
+</head>
+
+<body>
+    <% include partials/navbar %>
+
+    <div class="content">
+                  
+        <form action="" method="post">
+           <ul class="form-admin">Login<input class="form-control mr-sm-2 " name="login" type="text" placeholder="Login" aria-label="Login" required/></ul>
+           <ul class="form-admin">Password<input class="form-control mr-sm-2" name="password" type="password" placeholder="Password" aria-label="Password" required/></ul>
+           <ul class="form-admin"><input class="form-control mr-sm-2" name="submit" type="submit" value="Submit"/></ul>
+        
+        </form>
+
+    </div>
+
+
+    <% include partials/footer %>
+</body>
+
+</html>
+<% include partials/script %>

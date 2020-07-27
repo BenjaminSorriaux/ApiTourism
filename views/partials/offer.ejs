@@ -1,0 +1,91 @@
+<section>
+    <div class="container">
+        <!--contain the location-->
+        <div class="row">
+            <div class="col-sm text-right">
+                <h4>LOCATION :</h4>
+            </div>
+            <div class="col-sm text-left">
+                            <!--check is the museum have an adress -->                
+                <h4 class="card-text">
+                    <% if(typeof(dataQuery[0].isLocatedAt[0].schema_address[0]) !== 'undefined'   ){ %>
+                    <%= dataQuery[0].isLocatedAt[0].schema_address[0].schema_addressLocality    %>
+                    (<%=  dataQuery[0].isLocatedAt[0].schema_address[0].schema_postalCode     %>)
+                    <% } else{ %>
+                    NO INFO
+                    <% } %></h4>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+<!--check is the museum have a theme -->
+    <p>Theme :  <% if(typeof(dataQuery[0].hasTheme[0]) !== 'undefined'   ){ %>
+            <%= dataQuery[0].hasTheme[0].rdfs_label[0].value%>                       
+            <% } else{ %>
+            NO INFO
+            <% } %>
+    
+    
+    </p> </section> <section>
+            <p>Description</p>
+</section>
+<section id="description">
+    <h1>                 
+ <!--check is the museum have a Description -->
+
+        <% if(typeof(dataQuery[0].hasDescription[0]) !== 'undefined'   ){ %>
+            <%= dataQuery[0].hasDescription[0].shortDescription[0].value   %>
+            <% } else{ %>
+            NO INFO
+            <% } %>
+    </h1>
+</section>
+
+<section>
+ <!--check is the museum have a phone number-->
+
+    <p>Contact :  <% if(typeof(dataQuery[0].hasContact[0].schema_telephone[0]) !== 'undefined'   ){ %>
+        <%= dataQuery[0].hasContact[0].schema_telephone[0]    %>                        
+        <% } else{ %>
+        NO INFO
+        <% } %> 
+     </p>
+</section>
+
+
+</div>
+
+
+<div class="footercontent">
+<a name="footercontent"></a>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <form action="map" method="post">
+            <input type="text" name="displayMapLatitude" id="displayMapLatitude"
+                value="<%= dataQuery[0].isLocatedAt[0].schema_geo[0].schema_latitude    %>" hidden="true">
+            <input type="text" name="displayMapLongitude" id="displayMapLongitude"
+                value="<%= dataQuery[0].isLocatedAt[0].schema_geo[0].schema_longitude    %>" hidden="true" ;>
+            <input type="text" name="displayName" id="displayName"
+                value="<%= dataQuery[0].rdfs_label[0].value    %>" hidden="true" ;>
+            <input class="btn btn-primary" type="submit" value="View on map" name="displayMap" id="displayMap" ;>
+        </form>
+      </div>
+      <div class="col-sm">
+       
+
+
+
+<a name="" id="" class="btn btn-primary " href="listing" role="button">Back to offers</a>
+
+      </div>
+      
+    </div>
+  </div>
+
+
+</div>
+
+</div>
